@@ -1,171 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Answer Key</title>
-<style>
-     hr {
-      height: 2px;
-      background-color: black;
-      border: none;
-    }
-    .exam {
-        width: 793px;
-        height: 1000px;
-        border: 1px solid #000;
-    }
-    #answer-key {
-        display: flex;
-        justify-content: center;
-        padding: 10px 0 0;
-    }
-	.row_blocks{
-		display: flex;
-        justify-content: center;
-	}
-    .writing {
-        margin: 10px;
-    }
-    .test {
-        border-bottom: 3px solid #000;
-    }
-	.box_block{
-		border: 2px solid #000;
-        padding: 5px;
-        width: 182px;
-		display: flex;
-		height: 237px;
-		margin-right: 15px;
-		margin-bottom: 12px;
-		
-	}
-	.box_inside{
-		display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        height: 45px;
-	}
-    .block {
-        border: 2px solid #000;
-        padding: 10px;
-        width: 142px;
-        margin-right: 12px;
-        margin-bottom: 12px; /* Added margin bottom to create space between rows */
-    }
-    .block_inside {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        height: 25px;
-    }
-    .question {
-        border: 1px solid black;
-        width: 20px;
-        height: 10px;
-        margin-right: 5px;
-    }
-    .number {
-        width: 20px;
-        margin-right: 9px;
-    }
-    .answer {
-        border: 1px solid black;
-        width: 50px;
-        height: 32px;
-    }
-	.box{
-		display: flex;
-		flex-wrap: wrap;
-        align-items: center;
-        height: 48px;
-	}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answer Key</title>
+    <style>
+        .img {
+            margin: 5px;
+            padding: 5px;
+        }
+        hr {
+            height: 2px;
+            background-color: black;
+            border: none;
+        }
 
-</style>
+        .exam {
+            width: 793px;
+            height: 950px;
+            border: 2px solid #000;
+        }
+
+        .test {
+            margin-top: 5px;
+        }
+
+        #answer-key {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0 0;
+        }
+
+        .row_blocks {
+            display: flex;
+            justify-content: center;
+        }
+
+        .writing {
+            margin: 10px;
+        }
+
+        .test {
+            border-bottom: 3px solid #000;
+        }
+
+        .box_block {
+            border: 2px solid #000;
+            padding: 5px;
+            width: 182px;
+            display: flex;
+            height: 237px;
+            margin-right: 15px;
+            margin-bottom: 12px;
+
+        }
+
+        .box_inside {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            height: 45px;
+        }
+
+        .block {
+            border: 2px solid #000;
+            padding: 10px;
+            width: 142px;
+            margin-right: 12px;
+            margin-bottom: 12px;
+            /* Added margin bottom to create space between rows */
+        }
+
+        .block_inside {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            height: 25px;
+        }
+
+        .question {
+            border: 1px solid black;
+            width: 20px;
+            height: 10px;
+            margin-right: 5px;
+        }
+
+        .number {
+            width: 20px;
+            margin-right: 9px;
+        }
+
+        .answer {
+            border: 1px solid black;
+            width: 50px;
+            height: 32px;
+        }
+
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            height: 48px;
+        }
+		.markers{
+			display: flex;
+			width: 797px;
+			justify-content: space-between;
+			margin-bottom: 5px;
+		}
+    </style>
 </head>
+
 <body>
-<div class="exam">
-    <div class="test" id="answer-key">
-        <script>
-            var num = 1;
-            for (var row = 0; row < 4; row++) { // Loop for 4 blocks in each row
-                var rowContainer = document.createElement('div');
-                rowContainer.className = 'row';
+	<div class="markers">
+		<img src="markers/marker_1.png" alt="" width="30" height="30">
+		<img src="markers/marker_3.png" alt="" width="30" height="30">
+	</div>
+    
+    <div class="exam">
+        <div class="test" id="answer-key">
+            <script>
+                var num = 1;
+                for (var row = 0; row < 4; row++) { // Loop for 4 blocks in each row
+                    var rowContainer = document.createElement('div');
+                    rowContainer.className = 'row';
 
-                for (var k = 0; k < 2; k++) { // Loop for 4 rows 
-                    var block = document.createElement('div');
-                    block.className = 'block';
+                    for (var k = 0; k < 2; k++) { // Loop for 4 rows 
+                        var block = document.createElement('div');
+                        block.className = 'block';
 
-                    for (var i = 1; i <= 10; i++) {
-                        var blockInside = document.createElement('div');
-                        blockInside.className = 'block_inside';
+                        for (var i = 1; i <= 10; i++) {
+                            var blockInside = document.createElement('div');
+                            blockInside.className = 'block_inside';
 
-                        var numberDiv = document.createElement('div');
-                        numberDiv.className = 'number';
-                        numberDiv.textContent = num++;
+                            var numberDiv = document.createElement('div');
+                            numberDiv.className = 'number';
+                            numberDiv.textContent = num++;
 
-                        blockInside.appendChild(numberDiv);
+                            blockInside.appendChild(numberDiv);
 
-                        for (var j = 0; j < 4; j++) {
-                            var questionDiv = document.createElement('div');
-                            questionDiv.className = 'question';
-                            blockInside.appendChild(questionDiv);
+                            for (var j = 0; j < 4; j++) {
+                                var questionDiv = document.createElement('div');
+                                questionDiv.className = 'question';
+                                blockInside.appendChild(questionDiv);
+                            }
+
+                            block.appendChild(blockInside);
                         }
 
-                        block.appendChild(blockInside);
+                        rowContainer.appendChild(block);
                     }
 
-                    rowContainer.appendChild(block);
+
+                    document.getElementById('answer-key').appendChild(rowContainer);
                 }
+            </script>
+        </div>
+        <div class="writing" id="answer-sets">
+            <script>
+                for (var rowBlock = 1; rowBlock <= 1; rowBlock++) { // Rows
+                    var rowBlocksDiv = document.createElement('div');
+                    rowBlocksDiv.className = 'row_blocks';
 
+                    for (var block = 1; block <= 3; block++) { // Columns
+                        var boxBlockDiv = document.createElement('div');
+                        boxBlockDiv.className = 'box_block';
 
-                document.getElementById('answer-key').appendChild(rowContainer);
-            }
-        </script>
+                        for (var inside = 1; inside <= 2; inside++) { // Loop for 2 box_insides in each box_block
+                            var boxInsideDiv = document.createElement('div');
+                            boxInsideDiv.className = 'box_inside';
+
+                            for (var i = 1; i <= 5; i++) { // Loop for 4 boxes in each box_inside
+                                var boxDiv = document.createElement('div');
+                                boxDiv.className = 'box';
+
+                                var numberDiv = document.createElement('div');
+                                numberDiv.className = 'number';
+                                numberDiv.textContent = num++;
+
+                                var answerDiv = document.createElement('div');
+                                answerDiv.className = 'answer';
+
+                                boxDiv.appendChild(numberDiv);
+                                boxDiv.appendChild(answerDiv);
+
+                                boxInsideDiv.appendChild(boxDiv);
+                            }
+
+                            boxBlockDiv.appendChild(boxInsideDiv);
+                        }
+
+                        rowBlocksDiv.appendChild(boxBlockDiv);
+                    }
+
+                    document.getElementById('answer-sets').appendChild(rowBlocksDiv);
+                }
+            </script>
+        </div>
     </div>
-    <div class="writing" id="answer-sets">
-    <script>
-        for (var rowBlock = 1; rowBlock <= 1; rowBlock++) { // Rows
-            var rowBlocksDiv = document.createElement('div');
-            rowBlocksDiv.className = 'row_blocks';
-
-            for (var block = 1; block <= 3; block++) { // Columns
-                var boxBlockDiv = document.createElement('div');
-                boxBlockDiv.className = 'box_block';
-
-                for (var inside = 1; inside <= 2; inside++) { // Loop for 2 box_insides in each box_block
-                    var boxInsideDiv = document.createElement('div');
-                    boxInsideDiv.className = 'box_inside';
-
-                    for (var i = 1; i <= 5; i++) { // Loop for 4 boxes in each box_inside
-                        var boxDiv = document.createElement('div');
-                        boxDiv.className = 'box';
-
-                        var numberDiv = document.createElement('div');
-                        numberDiv.className = 'number';
-                        numberDiv.textContent = num++;
-
-                        var answerDiv = document.createElement('div');
-                        answerDiv.className = 'answer';
-
-                        boxDiv.appendChild(numberDiv);
-                        boxDiv.appendChild(answerDiv);
-
-                        boxInsideDiv.appendChild(boxDiv);
-                    }
-
-                    boxBlockDiv.appendChild(boxInsideDiv);
-                }
-
-                rowBlocksDiv.appendChild(boxBlockDiv);
-            }
-
-            document.getElementById('answer-sets').appendChild(rowBlocksDiv);
-        }
-    </script>
-</div>
-</div>
-
+    <img src="markers/marker_2.png" alt="" width="30" height="30" style="margin-top: 5px;">
 
 </body>
+
 </html>
